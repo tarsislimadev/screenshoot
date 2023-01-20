@@ -16,12 +16,15 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Docker build
-        run: docker-compose build github-release
+        run: docker-compose run github-release node index.js
 
-      - name: Export app
-        run: docker run -v $(pwd)/dist:/dist github-release cp -rfv ./dist/* /dist
+      - name: List files
+        run: ls -laR *.png
 
-      - name: Create release
-        run: gh release create v$( date +%Y-%m-%d-%H-%M ) $(pwd)/dist/*
-        env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Export app
+      #   run: docker run -v $(pwd)/dist:/dist github-release cp -rfv ./dist/* /dist
+
+      # - name: Create release
+      #   run: gh release create v$( date +%Y-%m-%d-%H-%M ) $(pwd)/dist/*
+      #   env:
+      #       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
