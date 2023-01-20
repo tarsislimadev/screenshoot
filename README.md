@@ -1,0 +1,5 @@
+# Screenshoot
+
+## License
+
+[MIT](./LICENSE)
