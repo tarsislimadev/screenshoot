@@ -5,5 +5,8 @@
   "scripts": {
     "start": "node ."
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^18.1.0"
+  }
 }
