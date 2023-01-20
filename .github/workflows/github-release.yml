@@ -25,9 +25,9 @@ jobs:
         run: docker-compose run --user root github-release node ./app/index.js
 
       - name: List files
-        run: ls -laR
+        run: ls ./src/*.png
 
       - name: Create release
-        run: gh release create v$( date +%Y-%m-%d-%H-%M ) *.png
+        run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/*.png
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
