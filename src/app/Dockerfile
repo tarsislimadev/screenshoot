@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM ghcr.io/puppeteer/puppeteer:18.1.0
 
 WORKDIR /app
 
