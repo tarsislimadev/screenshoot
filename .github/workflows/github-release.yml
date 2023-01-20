@@ -25,7 +25,7 @@ jobs:
         run: docker-compose run --user root github-release node ./app/index.js
 
       - name: List files
-        run: ls -laR *.png
+        run: ls -la
 
       - name: Create release
         run: gh release create v$( date +%Y-%m-%d-%H-%M ) *.png
