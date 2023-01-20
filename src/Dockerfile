@@ -6,10 +6,8 @@ WORKDIR /app
 
 COPY app .
 
-RUN npm i 
+RUN npm i
 
 RUN node node_modules/puppeteer/install.js
 
-# USER pptruser
-
-CMD npm start
+CMD node index.js 
