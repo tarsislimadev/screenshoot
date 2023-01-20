@@ -12,4 +12,4 @@ RUN node node_modules/puppeteer/install.js
 
 # USER pptruser
 
-CMD node index.js
+CMD npm start
