@@ -1,1 +1,3 @@
-docker-compose run --user root -e PUPPETEER_SKIP_DOWNLOAD=true app npm ci 
+docker-compose run --user root app npm i 
+
+docker-compose run --user root app node node_modules/puppeteer/install.js
