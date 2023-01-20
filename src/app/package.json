@@ -1,0 +1,9 @@
+{
+  "name": "screenshoot",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "license": "MIT"
+}
