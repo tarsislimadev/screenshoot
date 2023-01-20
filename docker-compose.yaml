@@ -8,4 +8,6 @@ services:
       - './src/app:/app'
 
   github-release:
-    build: './src/app'
+    image: 'github-release'
+    build: './src'
+
