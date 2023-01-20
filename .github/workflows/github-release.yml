@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Docker build
-        run: docker-compose run github-release node index.js
+        run: docker-compose run --user root github-release node index.js
 
       - name: List files
         run: ls -laR *.png
