@@ -10,6 +10,7 @@ on:
 
 jobs:
   release:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - name: Check out
@@ -31,3 +32,4 @@ jobs:
         run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/*.png
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
