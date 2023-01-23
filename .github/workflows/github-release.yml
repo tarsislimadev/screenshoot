@@ -2,7 +2,7 @@ name: GitHub release
 
 on:
   schedule:
-    - cron: '50 * * * *'
+    - cron: '50 23 * * *'
   push:
     branches:
       - 'main'
