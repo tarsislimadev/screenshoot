@@ -1,1 +1,5 @@
 google https://google.com/
+globo https://www.globo.com/
+folha https://www.folha.uol.com.br/
+uol https://www.uol.com.br/
+sbt https://www.sbt.com.br/jornalismo
