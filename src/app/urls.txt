@@ -1,7 +1,3 @@
-agir36 http://www.agir36.com.br
-democraciacrista http://democraciacrista.org.br
-pt http://www.pt.org.br
-google https://google.com
 globo https://www.globo.com
 folha https://www.folha.uol.com.br
 uol https://www.uol.com.br
@@ -14,4 +10,3 @@ cnnbrasil https://www.cnnbrasil.com.br/
 cnn https://www.cnn.com/
 pt.wikipedia https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal
 en.wikipedia https://en.wikipedia.org/wiki/Main_Page
-partidoliberal https://partidoliberal.org.br
