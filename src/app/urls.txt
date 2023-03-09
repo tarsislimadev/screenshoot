@@ -5,9 +5,10 @@ sbt https://www.sbt.com.br/jornalismo
 medium https://medium.com
 olhardigital https://olhardigital.com.br
 tecmundo https://www.tecmundo.com.br
-exame https://exame.com/
-cnnbrasil https://www.cnnbrasil.com.br/
-cnn https://www.cnn.com/
+exame https://exame.com
+cnnbrasil https://www.cnnbrasil.com.br
+cnn https://www.cnn.com
 pt.wikipedia https://pt.wikipedia.org/wiki/Wikip%C3%A9dia:P%C3%A1gina_principal
 en.wikipedia https://en.wikipedia.org/wiki/Main_Page
 agenciabrasil https://agenciabrasil.ebc.com.br
+estadao https://www.estadao.com.br
