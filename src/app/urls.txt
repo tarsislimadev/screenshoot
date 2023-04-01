@@ -10,3 +10,4 @@ en.wikipedia https://en.wikipedia.org/wiki/Main_Page
 agenciabrasil https://agenciabrasil.ebc.com.br
 estadao https://www.estadao.com.br
 github-brtmvdl https://github.com/brtmvdl
+canaltech https://canaltech.com.br
