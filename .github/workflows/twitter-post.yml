@@ -26,4 +26,4 @@ jobs:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: List directories
-        run: ls -la
+        run: ls -laR
