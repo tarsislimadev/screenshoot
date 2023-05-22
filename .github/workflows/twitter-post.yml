@@ -1,0 +1,31 @@
+name: Twitter post
+
+on:
+  schedule:
+    - cron: '50 12 * * *'
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  release:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Create release
+        run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/*.png
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create directory
+        run: mkdir -p releases
+
+      - name: Download release
+        run: gh release download --pattern '*png' --dir releases
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: List directories
+        run: ls -la
