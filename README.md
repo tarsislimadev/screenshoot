@@ -6,9 +6,19 @@
 
 [Donate](https://link.mercadopago.com.br/brtmvdl) - [Telegram](https://t.me/+KRmg5MlqgMk0MTg5) - [Discord](https://discord.gg/VUJWb4Yk)
 
-## how to install
-
 ## how to use
+
+### list latest releases
+
+```
+bash env/releases/list.sh
+```
+
+### download release files
+
+```
+bash env/releases/download.sh  v2023-11-02-13-03 
+```
 
 ## license
 
