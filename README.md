@@ -8,7 +8,7 @@
 
 ## how to use
 
-### list latest releases
+### list releases
 
 ```
 bash env/releases/list.sh
@@ -18,6 +18,12 @@ bash env/releases/list.sh
 
 ```
 bash env/releases/download.sh  v2023-11-02-13-03 
+```
+
+### download latest release files
+
+```sh
+bash ./env/releases/download.sh $( bash ./env/releases/list.sh ) downloads
 ```
 
 ## license
