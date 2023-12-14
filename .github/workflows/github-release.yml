@@ -29,7 +29,7 @@ jobs:
       #   run: sudo chmod 1000:1000 ./src/*.png
 
       - name: Create release
-        run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/*.png
+        run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/app/*.png
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
