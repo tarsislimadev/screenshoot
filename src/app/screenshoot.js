@@ -4,6 +4,10 @@ const fs = require('fs')
 
 const args = ['--no-sandbox', '--disable-setuid-sandbox']
 
+const filename = path.resolve(__dirname, 'urls.txt')
+
+const getFileLines = () => fs.readFileSync(filename).toString().split(/\r?\n/ig)
+
 const run = async (url, name = Date.now()) => {
   if (!url) return
 
@@ -21,9 +25,5 @@ const run = async (url, name = Date.now()) => {
   await browser.close()
 }
 
-const filename = path.resolve(__dirname, 'urls.txt')
-const filetext = fs.readFileSync(filename).toString()
-
-filetext.split(/\r?\n/ig)
-  .map((line) => line.split(' '))
-  .forEach(([name, url]) => run(url, name))
+getFileLines().map((line) => line.split(' '))
+  .map(async ([url, name]) => await run(url, name))
