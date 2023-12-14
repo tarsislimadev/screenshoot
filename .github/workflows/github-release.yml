@@ -23,7 +23,7 @@ jobs:
         run: docker-compose run --user root app node node_modules/puppeteer/install.js
 
       - name: Docker build
-        run: docker-compose run --user root app node ./app/index.js
+        run: docker-compose run --user root app node ./screenshoot.js
 
       # - name: Permissions
       #   run: sudo chmod 1000:1000 ./src/*.png
