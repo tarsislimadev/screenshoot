@@ -1,0 +1,31 @@
+name: Facebook
+
+on:
+  schedule:
+    - cron: '50 * * * *'
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+jobs:
+  release:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+
+      - name: Install dependencies 
+        run: docker-compose run --user root app npm i 
+
+      - name: Install puppeteer
+        run: docker-compose run --user root app node node_modules/puppeteer/install.js
+
+      - name: Docker build
+        run: docker-compose run --user root app node ./facebook.js
+
+      - name: Create release
+        run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/app/*.png
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
