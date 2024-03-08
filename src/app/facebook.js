@@ -2,8 +2,6 @@ const puppeteer = require('puppeteer')
 const path = require('path')
 const fs = require('fs')
 
-const getFileLines = () => ['https://web.facebook.com/ facebook']
-
 const run = async (url, name = Date.now()) => {
   if (!url) return
 
@@ -16,10 +14,16 @@ const run = async (url, name = Date.now()) => {
   await page.setDefaultNavigationTimeout(0)
   await page.goto(url)
   await page.waitForTimeout(10 * 1000)
+  // e-mail
+  const emailSelector = '#email'
+  await page.waitForSelector(emailSelector)
+  await page.type(emailSelector, 'mail@mail.com')
+  // pass
+  const passSelector = '#pass'
+  await page.waitForSelector(passSelector)
+  await page.type(passSelector, 'mail@mail.com')
   await page.screenshot({ path: name + '.png', fullPage: true })
-
   await browser.close()
 }
 
-getFileLines().map((line) => line.split(' '))
-  .map(async ([url, name]) => await run(url, name))
+run('https://web.facebook.com/', 'facebook')
