@@ -26,6 +26,10 @@ bash env/releases/download.sh  v2023-11-02-13-03
 bash ./env/releases/download.sh $( bash ./env/releases/list.sh ) downloads
 ```
 
+## author
+
+[Tarsis Lima](https://www.linkedin.com/in/brtmvdl/)
+
 ## license
 
 [MIT](./LICENSE)
