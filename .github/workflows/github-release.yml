@@ -3,9 +3,6 @@ name: GitHub release
 on:
   schedule:
     - cron: '50 * * * *'
-  push:
-    branches:
-      - 'main'
   workflow_dispatch:
 
 jobs:
@@ -14,16 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Install dependencies 
-        run: docker-compose run --user root app npm i 
+        run: npm i 
 
       - name: Install puppeteer
-        run: docker-compose run --user root app node node_modules/puppeteer/install.js
+        run: node node_modules/puppeteer/install.js
 
       - name: Docker build
-        run: docker-compose run --user root app node ./screenshoot.js
+        run: node ./screenshoot.js
 
       # - name: Permissions
       #   run: sudo chmod 1000:1000 ./src/*.png
@@ -32,4 +33,3 @@ jobs:
         run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/app/*.png
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
