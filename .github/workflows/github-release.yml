@@ -1,9 +1,6 @@
 name: GitHub release
 
-on:
-  schedule:
-    - cron: '50 * * * *'
-  workflow_dispatch:
+on: ['workflow_dispatch']
 
 jobs:
   release:
@@ -16,6 +13,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+
+      - name: Install Docker Compose
+        run: sudo apt install -y docker-compose
 
       - name: Install dependencies 
         run: docker-compose run github-release npm i 
