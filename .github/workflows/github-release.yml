@@ -18,7 +18,7 @@ jobs:
         run: sudo apt install -y docker-compose
 
       - name: Install dependencies
-        run: docker-compose run github-release # npm i
+        run: docker-compose build github-release
 
       - name: Install puppeteer
         run: docker-compose run github-release node node_modules/puppeteer/install.js
