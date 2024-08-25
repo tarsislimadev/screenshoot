@@ -18,13 +18,13 @@ jobs:
         run: sudo apt install -y docker-compose
 
       - name: Install dependencies
-        run: docker-compose run github-release npm i
+        run: docker-compose run app npm i
 
       - name: Install puppeteer
-        run: docker-compose run github-release node node_modules/puppeteer/install.js
+        run: docker-compose run app node node_modules/puppeteer/install.js
 
       - name: Docker build
-        run: docker-compose run github-release node ./screenshoot.js
+        run: docker-compose run app node ./screenshoot.js
 
       - name: Permissions
         run: sudo chmod 1000:1000 ./src/*.png
