@@ -26,8 +26,8 @@ jobs:
       - name: Docker build
         run: docker-compose run app node ./screenshoot.js
 
-      - name: Permissions
-        run: sudo chmod 1000:1000 ./src/*.png
+      # - name: Permissions
+      #   run: sudo chmod 1000:1000 ./src/*.png
 
       - name: Create release
         run: gh release create v$( date +%Y-%m-%d-%H-%M ) ./src/app/*.png
